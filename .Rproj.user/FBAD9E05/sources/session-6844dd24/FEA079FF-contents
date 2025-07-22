@@ -1,0 +1,1 @@
+Source to deploy pages: https://forum.posit.co/t/deploying-xaringan-slides-a-ten-step-github-pages-workflow-r-views-submission/115003
