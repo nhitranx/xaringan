@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Environment Movies Trends</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Nhi Tran" />
+    <script src="libs/header-attrs-2.29/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Environment Movies Trends
+]
+.author[
+### Nhi Tran
+]
+
+---
+
+
+## Questions
+
+1. How has film production evolved regarding environmental themes?  
+  
+2. Which countries are most prominent in producing these films?
+  
+3. What can we infer about the *global environmental discourse through cinema*?
+
+---
+## Data &amp; Methods
+- Source: Scraping from TMDB - The Movie Database  
+- Dataset: film reviews and metadata (years, countries, keywords, genres)  
+
+![](img/word_cloud.png)
+
+---
+
+# Frequency of movies released
+![](img/time_movies.png)
+
+???
+Environmental movies increase over time. 2025 movies are fewer because the data is scraped on 2025-07-17. Although we are in the latter half of the year and the number of environment movies are lower than half those released last year, I refrained from interpretation as this might be a delay of the database and movie releases may not be linear across all months.
+
+---
+
+# Movie releases by countries 
+![](img/time_countries.png)
+
+???
+The US has consistently dominated production of environmental movies, whereas China's number was limited. Part of the reason may be that the source of this dataset, TMDB, is an English-based crowdsourcing database This figure shows the total of movies by countries, and unlike the histogram above, contains duplicates where multiple countries co-produces movies.
+
+
+I cut the release data data into 3 intervals with equal number of movies in each period. Looking at the intervals, it is clear that more environmental movies are being released, making more recent periods *shrink*, as in [1950,2013], (2013,2020], (2020,2025].
+
+---
+# Reception: Ratings
+
+![](img/time_vote.png)
+
+???
+There doesn't seem to be very significant changes in the distribution of ratings over time. Overall, ratings of environmental movies rise, which might be an indicator for increasing positive reception of environmental movies. Can time be a confounding variable? It doesn't seem like so -- supporting increased appreciation of environmental movies, a movie analysis  [project](https://surajkarak.github.io/projects/IMDb-Movie-Data-Analysis/#:~:text=Exploring%20the%20weightedRating%20averaged%20for%20all%20films%20in%20a%20year%2C%20it%20looks%20like%20the%20decade%201920s%2D1930s%20was%20the%20best) of IMDb suggests that overall weighted ratings of movies do not rise over time but decline.
+
+---
+# Reception: Revenue
+![](img/time_vote_revenue.png)
+--
+The revenue of movies does not show an upward trend over different periods. There is no clear emerging preference for environment movies regarding box offices. 
+
+---
+class: inverse, middle, center
+
+# Text analysis
+
+---
+# Frequent words
+
+![](img/most_frequent_period.png)
+
+???
+In the first period, environmental movies seem to center around nature ("nature", "earth", "disaster") and human ("people", "humanity", "human"). *"klaatu"* is a humanoid alien character in movie [Klaatu](https://en.wikipedia.org/wiki/Klaatu(The_Day_the_Earth_Stood_Still)).  Moving to the second period, the theme changes quite drastically towards monsters ("godzilla", "monsters", "titans"). This period (2013-2020) marks the success of Godzilla[^godzilla-note] as its frequency rises higher than any token across all periods. Lastly, from 2020 to present as of 2025, "science" enters the chart for the first time. This might indicate growing awareness towards climate science in recent years.
+
+Notably, "time" tops both 1950-2013 and 2020-2025 and is also common in reviews in the 2013-2020 period. However, when I looked into it for context, "time" has been used in non-evaluative ways, mostly irrelevant to the sentiment of the reviews and content of the movies. Some examples are shown below:
+
+# Sentiment by frequency
+
+Essentially, analysis based on whether words are positive or negative.
+
+![](img/sentiment.png)
+
+???
+In the early period (1950-2013), it seems that discussion centers around nature more than human in terms of natural disasters and beauty. Similar to the frequency plot, the theme monster and apocalypse disappears in the last period. "protest" entry in this last period may imply a shift towards anthropogenic climate change, where human becomes more actively involved in climate issues. "faith" and "optimism" entries in positive charts during 2013-2025 are in accordance with this.
+
+---
+# Sentiment &amp; Ratings
+![](img/sentiment_ratings.png)
+
+???
+
+- In the recent period of 2013-2025, higher ratings seem to go hand in hand with positive sentiment scores. The trend is in accordance with the high-frequency positive words shown in previous figures.  
+- This pattern is inconsistent with the 1950-2013 period, where the highest rating bin has a negative mean sentiment score.
+
+
+This can be attributed to the fact that high-frequency negative words from 1950 to 2013 are more descriptive than evaluative, and thus negative sentiment scores represent the movies' content rather than quality. Specifically, during 2013-2025, top negative words feature "bad", "dumb", "worst", "unnecessary", "stupid", "poorly", whereas 1950-2013 words include "destruction", "destructive", killing", "cold". There are mixes of descriptive and evaluative negative words across periods, but the distributions are not identical. 
+
+---
+# 
+![](img/by_period_negative.png)
+
+---
+# Sentiment &amp; Revenue
+![](img/sentiment_revenue.png)
+
+--
+There aren't clear patterns between the sentiment scores of movies and their success at box office. Negative sentiments might characterize the content of environmental movies (e.g. climate crises) rather than indicate negative reception, especially in the old days (1950-2013).  
+
+---
+
+# Conclusion
+- Environment-themed movies are increasing over time.  
+
+--
+- China's movies are very limited, whereas the US produced the most environmental movies. *Might be bias with the data.*  
+
+--
+- Based on user ratings, environmental movies have gained more positive reception over time, but not increased success at box office.  
+
+--
+- Some nuanced shifts in the content of environmental crises in movies are discussed in [sentiment analysis](#sentiment-analysis). Negative themes portrayed in movies did not lead to negative reception, particularly during 1950-2013.  
+
+---
+
+# Limitations &amp; Directions
+- Lack of data: Because TMDB is crowd-sourced, there are many movies missing reviews, revenues, ratings, etc. Movies that do not reach the global audience and/or are unavailable in English also are less likely to show up in the database and get scraped. Bigger database like IMDb is a better option than TMDB for scraping user ratings and reviews.   
+
+- Time: 
+  - I tried to find data on climate risk by countries to see whether environmental movies are being produced more/received better in countries heavily hit by climate change. However, I only found a [working paper](https://www.eib.org/attachments/lucalli/20250135-120625-economics-working-paper-2025-06-en.pdf) and a [2022 report](https://www.eib.org/attachments/lucalli/20250135-120625-economics-working-paper-2025-06-en.pdf), both of which are PDFs. I am uncertain about the reliability of this data, and also don't have time to scrape PDF data.  
+  - Another direction I wanted to look into but not have time for is significant global climate milestones like Kyoto Protocol and Paris Agreement. Do they have any relationship with the environmental movies output?
+
+---
+class: center, middle
+
+# Thanks!
+Credits stolen from [xaringan intro slides](https://slides.yihui.org/xaringan/#1).
+
+Slides created via the R package [xaringan](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [knitr](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
