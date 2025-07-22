@@ -33,6 +33,7 @@ writeLines(readme_lines, "README.md")
 ### Generate index.html# List all files (excluding directories)
 files <- list.files(path = ".", full.names = FALSE)
 files <- files[!file.info(files)$isdir]  # Remove directories
+files <- files[files != "index.html"]  # Remove root page
 
 # Start writing the HTML content
 html_lines <- c(
