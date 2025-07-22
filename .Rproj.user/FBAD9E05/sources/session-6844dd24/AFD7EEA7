@@ -3,7 +3,7 @@
     "path": "C:/Users/catnh/OneDrive - The University of Chicago/Documents/R/xaringan/scripts/index_generator.R",
     "project_path": "scripts/index_generator.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "4158626240",
     "contents": "",
     "dirty": false,
     "created": 1753161100251.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "30,37",
-        "scrollLine": "20"
+        "cursorPosition": "50,41",
+        "scrollLine": "27"
     },
     "folds": "",
-    "lastKnownWriteTime": 1753161611,
+    "lastKnownWriteTime": 1753161706,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1753161611797,
+    "last_content_update": 1753161706719,
     "read_only": false,
     "read_only_alternatives": []
 }

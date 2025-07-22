@@ -30,8 +30,7 @@ readme_lines <- c(
 # Write to README.md
 writeLines(readme_lines, "README.md")
 
-### Generate index.html
-# List all files (excluding directories)
+### Generate index.html# List all files (excluding directories)
 files <- list.files(path = ".", full.names = FALSE)
 files <- files[!file.info(files)$isdir]  # Remove directories
 
@@ -65,4 +64,3 @@ html_lines <- c(
 
 # Write to index.html
 writeLines(html_lines, "index.html")
-
