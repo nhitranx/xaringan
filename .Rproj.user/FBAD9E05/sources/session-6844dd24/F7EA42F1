@@ -3,24 +3,24 @@
     "path": "C:/Users/catnh/OneDrive - The University of Chicago/Documents/R/xaringan/presentation_envi_movies.Rmd",
     "project_path": "presentation_envi_movies.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "3864399221",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1753159315010.0,
     "source_on_save": false,
     "relative_order": 3,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "39,37",
-        "scrollLine": "25"
+        "cursorPosition": "11,19",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1753160664,
+    "lastKnownWriteTime": 1753161915,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1753160778412,
+    "last_content_update": 1753161915297,
     "read_only": false,
     "read_only_alternatives": []
 }

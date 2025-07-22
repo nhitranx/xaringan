@@ -9,6 +9,7 @@ output:
       highlightStyle: solarized-light
       highlightLines: true
       countIncrementalSlides: false
+      countdown: 30000
 ---
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
