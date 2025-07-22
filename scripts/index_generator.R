@@ -31,9 +31,9 @@ readme_lines <- c(
 writeLines(readme_lines, "README.md")
 
 ### Generate index.html
-# List all immediate directories at the root
-dirs <- list.dirs(path = ".", full.names = FALSE, recursive = FALSE)
-dirs <- dirs[dirs != ""]  # Remove empty entries
+# List all files (excluding directories)
+files <- list.files(path = ".", full.names = FALSE)
+files <- files[!file.info(files)$isdir]  # Remove directories
 
 # Start writing the HTML content
 html_lines <- c(
@@ -41,17 +41,17 @@ html_lines <- c(
   "<html>",
   "<head>",
   "  <meta charset='UTF-8'>",
-  "  <title>Project Directory Index</title>",
+  "  <title>Project Files Index</title>",
   "</head>",
   "<body>",
-  "  <h1>Project Directory Index</h1>",
-  "  <p>Welcome! This repository contains the following directories:</p>",
+  "  <h1>Project Files Index</h1>",
+  "  <p>Files available in this repository root:</p>",
   "  <ul>"
 )
 
-# Add a list item with links for each directory
-dir_links <- paste0("    <li><a href='./", dirs, "/'>", dirs, "/</a></li>")
-html_lines <- c(html_lines, dir_links)
+# Add list items with links for each file
+file_links <- paste0("    <li><a href='./", files, "'>", files, "</a></li>")
+html_lines <- c(html_lines, file_links)
 
 # Close HTML tags
 html_lines <- c(
