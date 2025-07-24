@@ -6,6 +6,8 @@ Welcome! This repository contains the following main directories:
 
 - [.git/](./.git/)
 - [.Rproj.user/](./.Rproj.user/)
+- [ai_log/](./ai_log/)
+- [data/](./data/)
 - [img/](./img/)
 - [libs/](./libs/)
 - [scripts/](./scripts/)
